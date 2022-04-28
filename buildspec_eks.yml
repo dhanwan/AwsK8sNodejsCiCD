@@ -43,4 +43,6 @@ phases:
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
       - echo Push the latest image to cluster
       - kubectl apply -f cicd/Deployment.yml
+      - kubectl apply -f cicd/services.yml
+      
       - kubectl rollout restart -f cicd/Deployment.yml
