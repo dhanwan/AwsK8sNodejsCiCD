@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicd-nodejs
+  labels:
+    app: nodejs-deploy 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+        - name: nodejs
+          imagePullPolicy: Always
+          image: 952796707411.dkr.ecr.us-east-1.amazonaws.com/cicd-nodejs:latest
+          ports:
+          - containerPort: 3000
+
+
