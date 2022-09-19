@@ -26,6 +26,7 @@ pipeline {
             steps{
                 sh "chmod +x tagVersion.sh"
                 sh "./tagVersion.sh ${DOCKER_TAG}"
+                sh "kubectl apply -f k8s/."
             }
 
         }
