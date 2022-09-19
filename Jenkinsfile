@@ -14,7 +14,7 @@ pipeline {
         }
         stage("DockerHub Push Images"){
             steps{
-                sh "h 'echo $DOCKERHUB | docker login -u $DOCKERHUB --password-stdin"
+                sh "h 'echo $DOCKERHUB_PSW | docker login -u $DOCKERHUB --password-stdin"
             }
         
 
