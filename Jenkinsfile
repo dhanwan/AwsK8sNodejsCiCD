@@ -20,6 +20,13 @@ pipeline {
                 sh "docker logout"
             }
         
+        }
+
+        stage("Deploy to k8s"){
+            steps{
+                sh "chmod +x tagVersion.sh"
+                sh "./tagVersion.sh ${DOCKER_TAG}"
+            }
 
         }
     }
