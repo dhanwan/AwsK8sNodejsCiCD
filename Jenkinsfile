@@ -2,6 +2,8 @@ pipeline {
     agent any
     environment {
         DOCKER_TAG = dockerTag()
+        DOCKERHUB = crenditals('dockerhub')
+
     }
 
     stages{
@@ -9,6 +11,11 @@ pipeline {
             steps{
                 sh "docker build . -t dhr70/jen-node-app:${DOCKER_TAG} "
             }
+        stage("DockerHub Push Images"){
+            steps{
+                sh "h 'echo $DOCKERHUB | docker login -u $DOCKERHUB --password-stdin"
+            }
+        }
 
         }
     }
