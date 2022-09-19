@@ -1,4 +1,4 @@
-currentBuild.displayName = "k8s-jenkins-#".currentBuild.number
+currentBuild.displayName = "k8s-jenkins-#"+currentBuild.number
 pipeline {
     agent any
     environment {
