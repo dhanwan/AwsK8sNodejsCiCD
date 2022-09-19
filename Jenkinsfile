@@ -1,3 +1,4 @@
+currentBuild.displayName = "k8s-jenkins"
 pipeline {
     agent any
     environment {
