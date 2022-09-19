@@ -28,6 +28,13 @@ pipeline {
                 sh "./tagVersion.sh ${DOCKER_TAG}"
                 sshagent(['aws_ubuntu']) {
                     sh "scp -o StrictHostKeyChecking=no -r k8s/ ubuntu@3.108.60.249:/home/ubuntu"
+                    script{
+                        try {
+                            sh "ssh ubuntu@3.108.60.249 kubectl apply -f k8s/."
+                        }catch(error){
+                            sh "ssh ubuntu@3.108.60.249 kubectl create -f k8s/."
+                        }
+                    }
                 }
             }
 
