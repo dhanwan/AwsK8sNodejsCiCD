@@ -17,8 +17,19 @@ spec:
       containers:
         - name: nodejs
           imagePullPolicy: Always
-          image: 952796707411.dkr.ecr.us-east-1.amazonaws.com/cicd-nodejs:latest
+          image: nginx
           ports:
-          - containerPort: 3000
+          - containerPort: 80
+          resources:
+            requests:
+              memory: "250Mi"
+              cpu: "100m"
+            limits:
+              memory: "500Mi"
+              cpu:  "200m"
+
+
+
+
 
 
