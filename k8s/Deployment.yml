@@ -11,7 +11,7 @@ spec:
       app: node
       type: prod
   template:
-    metadta:
+    metadata:
       labels:
         app: node
         type: prod
