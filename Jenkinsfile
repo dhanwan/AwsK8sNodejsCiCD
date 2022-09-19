@@ -7,7 +7,7 @@ pipeline {
     stages{
         stage("Docker Build"){
             steps{
-                sh "docker build -t dhr70/jennodeapp:${DOCKER_TAG} ."
+                sh "docker build . -t dhr70/jen-node-app:${DOCKER_TAG} "
             }
 
         }
