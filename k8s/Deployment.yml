@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jen-node-app
+  labels:
+    app: nodejs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node
+      type: prod
+  template:
+    metadta:
+      labels:
+        app: node
+        type: prod
+    spec:
+      containers:
+        - name: jen-node-app
+          image: dhr70/jen-node-app
+          ports:
+            - containerPort: 3000
+            

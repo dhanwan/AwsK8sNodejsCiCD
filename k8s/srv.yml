@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    type: dev
+spec:
+  selector:
+    app: node
+    type: prod
+  ports: 
+    - port: 80
+      targetPort: 3000
+  type: NodePort
