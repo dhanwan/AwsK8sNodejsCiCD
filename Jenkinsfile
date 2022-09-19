@@ -27,7 +27,7 @@ pipeline {
                 sh "chmod +x tagVersion.sh"
                 sh "./tagVersion.sh ${DOCKER_TAG}"
                 sshagent(['aws_ubuntu']) {
-                    sh "scp -o StrictHostKeyChecking=no -r k8s/ ubuntu@3.108.60.249:/home/ubuntu"
+                    sh "scp -r k8s/ -o StrictHostKeyChecking=no  ubuntu@3.108.60.249:/home/ubuntu"
                 }
             }
 
