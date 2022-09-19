@@ -26,7 +26,9 @@ pipeline {
             steps{
                 sh "chmod +x tagVersion.sh"
                 sh "./tagVersion.sh ${DOCKER_TAG}"
-                sh "kubectl apply -f k8s/."
+                sshagent(['aws_ubuntu']) {
+                    sh "scp -o StrictHostKeyChecking=np k8s/ ubuntu@3.108.60.249:/home/ubuntu"
+                }
             }
 
         }
@@ -34,6 +36,6 @@ pipeline {
 }
 
 def dockerTag(){
-        def tag = sh script: 'git rev-parse HEAD', returnStdout: true
+        def tag = sh script: 'git rev-parse HEAD head -c 5', returnStdout: true
         return tag
 }
