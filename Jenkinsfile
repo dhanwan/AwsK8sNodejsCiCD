@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_TAG = dockerTag()
-        DOCKERHUB = crenditals('dockerhub')
+        DOCKERHUB = credentials('dockerhub')
 
     }
 
