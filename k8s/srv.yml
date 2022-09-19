@@ -9,6 +9,6 @@ spec:
     app: node
     type: prod
   ports: 
-    - port: 3000
-      targetPort: 3000
+      - nodeport: 3000
+        targetPort: 3000
   type: NodePort
