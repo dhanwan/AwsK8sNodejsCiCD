@@ -17,7 +17,7 @@ spec:
         type: prod
     spec:
       containers:
-        - name: jennodeapp:tagVersion
-          image: dhr70/jen-node-app:tagVersion
+        - name: jennodeapp:tagversion
+          image: dhr70/jen-node-app:tagversion
           ports:
             - containerPort: 3000
