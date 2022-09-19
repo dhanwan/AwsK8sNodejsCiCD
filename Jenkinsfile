@@ -12,8 +12,8 @@ pipline {
 
         }
     }
-    def dockerTag(){
+def dockerTag(){
         def tag = sh script: 'git rev-prase HEAD', returnStdout: true
         return tag
-    }
+}
 }
