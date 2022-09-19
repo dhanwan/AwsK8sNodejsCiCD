@@ -10,5 +10,6 @@ spec:
     type: prod
   ports: 
       - nodePort: 3000
+        port: 80
         targetPort: 3000
   type: NodePort
