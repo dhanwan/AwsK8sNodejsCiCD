@@ -15,6 +15,7 @@ pipeline {
         stage("DockerHub Push Images"){
             steps{
                 sh "echo $DOCKERHUB_PSW| docker login -u $DOCKERHUB_USR --password-stdin"
+                sh "docker push dhr70/jen-node-app:${DOCKER_TAG}"
             }
         
 
