@@ -1,7 +1,7 @@
 pipline {
     agent any
     enviroment {
-        DOCKER_TAG = def dockerTag()
+        DOCKER_TAG = dockerTag()
     }
 
     stages{
